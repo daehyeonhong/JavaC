@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int main(void) {
+int main_loop(void) {
     /*loop*/
     /*for, while, do while*/
 
@@ -47,9 +47,9 @@ int main(void) {
         }
     }*/
 
-    int input;
+    /*int input;
     printf("숫자를 입력하세요");
-    scanf_s("%d", &input);
+    scanf_s("%d", &input);*/
 
     /*for (int i = 0; i < input; i++)
     {
@@ -69,7 +69,7 @@ int main(void) {
         printf("\n");
     }*/
 
-    for (int i = 0; i < input; i++)
+    /*for (int i = 0; i < input; i++)
     {
         for (int j = 0; j <= input; j++)
         {
@@ -83,6 +83,23 @@ int main(void) {
             printf(" ");
         }
         for (int k = 0; k <= i; k++) {
+            printf("*");
+        }
+        printf("\n");
+    }*/
+
+
+    int floor;
+
+    printf("몇 층으로 쌓겠습니까?");
+
+    scanf_s("%d", &floor);
+
+    for (int i = 0; i < floor; i++) {
+        for (int j = i; j < floor - 1; j++) {
+            printf(" ");
+        }
+        for (int k = 0; k < i * 2 + 1; k++) {
             printf("*");
         }
         printf("\n");
