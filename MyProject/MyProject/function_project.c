@@ -6,10 +6,10 @@ void showQuestion(int level, int num1, int num2);
 void success();
 void failure();
 
-int main(void) {
+int main_password_master(void) {
     srand(time(NULL));
     int count = 0;
-    for (int i = 1; i < 5; i++)
+    for (int i = 1; i <= 5; i++)
     {
         int num1 = getRandomNumber(i);
         int num2 = getRandomNumber(i);
@@ -22,9 +22,9 @@ int main(void) {
         if (answer == -1)
         {
             printf("프로그램을 종료합니다.\n");
-            break;
+            exit(0);
         }
-        else if (answer==num1*num2)
+        else if (answer == num1 * num2)
         {
             success();
             count++;
@@ -34,6 +34,8 @@ int main(void) {
         }
 
     }
+
+    printf("당신은 5개의 비밀번호 중 %d개를 맞췄습니다!", count);
 
     return 0;
 }
@@ -47,4 +49,12 @@ void showQuestion(int level, int num1, int num2) {
     printf("\n\t%d x %d는 \n\n", num1, num2);
     printf("#################################\n");
     printf("\n비밀번호를 입력하세요 ==> (종료 : -1)");
+}
+
+void success() {
+    printf("\n >> Good! 정답입니다!!\n");
+}
+
+void failure() {
+    printf("\n >> 땡! 틀렸습니다!!\n");
 }
