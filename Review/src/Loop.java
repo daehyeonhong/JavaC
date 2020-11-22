@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class Loop {
 
     public static void main(String[] args) {
-        System.out.println("for");
+
+        /*System.out.println("for");
 
         for (int i = 0; i < 10; i++) {
             System.out.printf("Hello World%d\n", i);
@@ -41,8 +42,47 @@ public class Loop {
         try (Scanner scanner = new Scanner(System.in)) {
             int input;
             System.out.println("숫자를 입력하세요.");
-        }
+            input = scanner.nextInt();
 
+            for (i = 0; i < input; i++) {
+                for (int j = 0; j < i + 1; j++) {
+                    System.out.print("o");
+                }
+                System.out.println();
+            }
+
+            for (i = 0; i < input; i++) {
+                for (int j = i; j < input - 1; j++) {
+                    System.out.print(" ");
+                }
+                for (int k = 0; k <= i; k++) {
+                    System.out.print("o");
+                }
+                System.out.println();
+            }
+        }*/
+
+        int floor;
+        System.out.print("몇 층으로 쌓겠습니까? |-> ");
+        try (Scanner scanner = new Scanner(System.in)) {
+            floor = scanner.nextInt();
+
+            for (int i = 0; i < floor; i++) {
+                for (int j = i; j < floor - 1; j++) {
+                    System.out.print(" ");
+                }
+
+                for (int k = 0; k < i * 2 + 1; k++) {
+                    System.out.print("o");
+                }
+
+                System.out.println();
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
