@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class function_project {
+public class FunctionProject {
 
     public static void main(String[] args) {
         int count = 0;

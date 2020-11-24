@@ -144,6 +144,7 @@
     <ClCompile Include="function.c" />
     <ClCompile Include="function_project.c" />
     <ClCompile Include="loop.c" />
+    <ClCompile Include="pointer.c" />
     <ClCompile Include="printfscanf.c" />
     <ClCompile Include="random.c" />
     <ClCompile Include="array_project.c" />
