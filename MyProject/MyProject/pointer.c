@@ -72,11 +72,20 @@ int main(void) {
     ptr[2] = 300;
     for (int i = 0; i < 3; i++) {
         printf("Array arr[%d]의 값 : %d\n", i, arr[i]);
+        printf("Array arr[%d]의 값 : %d\n", i, *(arr + i));
     }
 
     for (int i = 0; i < 3; i++) {
         printf("Pointer ptr[%d]의 값 : %d\n", i, ptr[i]);
+        printf("Pointer ptr[%d]의 값 : %d\n", i, *(ptr + i));
     }
+
+    /**(arr + i) == arr[i];*/
+    /*arr == arr 배열의 첫번째 값의 주소와 동일 == &arr[0]*/
+    printf("arr 자체의 값 : %d\n", arr);
+    printf("arr[0] 자체의 값 : %d\n", &arr[0]);
+
+    printf("arr 자체의 값이 가지는 주소의 실제 값 : %d\n", *arr);
 
     return 0;
 }
