@@ -1,3 +1,5 @@
+package Codility;
+
 public class Test {
     public static int solution(int N) {
         String binaryStr = Integer.toBinaryString(N);

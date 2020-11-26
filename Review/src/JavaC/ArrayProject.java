@@ -1,3 +1,5 @@
+package JavaC;
+
 import java.util.Scanner;
 
 public class ArrayProject {
