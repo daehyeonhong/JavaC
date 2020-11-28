@@ -6,26 +6,29 @@ import java.sql.SQLException;
 
 public class DBConnection {
 
-	private static DBConnection instance;
+	private static Connection connection;
 
-	private DBConnection() {
-	}
-
-	public static DBConnection getInstance() {
-
-		return instance == null ? new DBConnection() : instance;
-	}
-
-	private static Connection getConnection() {
-		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
-		Connection connection = null;
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			connection = DriverManager.getConnection(url, "portfolio", "1234");
-		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
+	public static Connection getConnection() {
+		if (connection == null) {
+			String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+			String user = "portfolio";
+			String password = "1234";
+			try {
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				connection = DriverManager.getConnection(url, user, password);
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return connection;
+	}
+
+	public static void close() throws SQLException {
+		if (connection != null) {
+			if (!connection.isClosed()) {
+				connection.close();
+			}
+		}
 	}
 
 }
