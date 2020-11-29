@@ -10,7 +10,7 @@ public class DBConnection {
 
 	public static Connection getConnection() {
 		if (connection == null) {
-			String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+			String url = "jdbc:oracle:thin:@127.0.0.1:1521:orcl";
 			String user = "portfolio";
 			String password = "1234";
 			try {
